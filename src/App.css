@@ -3,6 +3,14 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: lightblue;
+}
+.hello-text {
+  font-size: 3em;
+  color: blue;
+}
+.para{
+font-size: 20px;
 }
 
 .logo {
