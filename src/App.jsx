@@ -17,13 +17,23 @@ import './App.css';
 //   );
 // }
 
-function App({message}) {
-  return(
+// function App({message}) {
+//   return(
+//     <>
+//   {(message.length >10) 
+//     ? <p>Too long</p>
+//     : <p>{message}</p>}
+//   </>);
+// }
+function App() {
+  const [color, setColor] = useState('black');
+
+  return (
     <>
-  {(message.length >10) 
-    ? <p>Too long</p>
-    : <p>{message}</p>}
-  </>);
+        <p style={{color}}>Hello World</p> 
+        <button onClick={() => setColor('red')}>Change color</button>
+    </>
+  );
 }
 
 export default App;
