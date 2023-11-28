@@ -1,6 +1,17 @@
 import { useState } from 'react';
 import './App.css';
-
+function App () {
+  const [name, setName]= useState('');
+   const inputChanged = (event) => {
+    setName(event.target.value);
+  }
+  return (
+    <>
+    <p>{name}</p>
+    <input value={name} onChange={inputChanged}/>
+    </>
+  )
+}
 // function App() {
 //   const [count, setCount] = useState(0);
 
@@ -25,16 +36,16 @@ import './App.css';
 //     : <p>{message}</p>}
 //   </>);
 // }
-function App() {
-  const [color, setColor] = useState('black');
+// function App() {
+//   const [color, setColor] = useState('black');
 
-  return (
-    <>
-        <p style={{color}}>Hello World</p> 
-        <button onClick={() => setColor('red')}>Change color</button>
-    </>
-  );
-}
+//   return (
+//     <>
+//         <p style={{color}}>Hello World</p> 
+//         <button onClick={() => setColor('red')}>Change color</button>
+//     </>
+//   );
+// }
 
 export default App;
 
