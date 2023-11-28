@@ -1,14 +1,27 @@
 import { useState } from 'react';
 import './App.css';
 function App () {
-  const [name, setName]= useState('');
-   const inputChanged = (event) => {
-    setName(event.target.value);
+  // const [name, setName]= useState('');
+  //  const inputChanged = (event) => {
+  //   setName(event.target.value);
+  // }
+  const [person, setPerson]=useState({firstname:'', lastname:'', email: ''})
+  const inputChanged = (event) => {
+  setPerson({...person, [event.target.name]: event.target.value});
+}
+ const showAlert = () => {
+    alert(`Hello ${person.firstname} ${person.lastname}`);
   }
+
   return (
     <>
-    <p>{name}</p>
-    <input value={name} onChange={inputChanged}/>
+    {/* <p>{name}</p>
+    <input value={name} onChange={inputChanged}/> */}
+    <p>Name: {person.firstname} {person.lastname} Email: {person.email}</p>
+    <input placeholder="First name" name="firstname" value={person.firstname} onChange={inputChanged} />
+    <input placeholder="Last name" name="firstname" value={person.lastname} onChange={inputChanged} />
+    <input placeholder="Email" name="email" value={person.email} onChange={inputChanged} />
+    <button onClick={showAlert}>Submit</button>
     </>
   )
 }
