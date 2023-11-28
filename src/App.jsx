@@ -12,16 +12,28 @@ function App () {
  const showAlert = () => {
     alert(`Hello ${person.firstname} ${person.lastname}`);
   }
+const formSubmitted = (event) => {
+  event.preventDefault();
+  // Do something with you data
+}
 
   return (
     <>
     {/* <p>{name}</p>
     <input value={name} onChange={inputChanged}/> */}
-    <p>Name: {person.firstname} {person.lastname} Email: {person.email}</p>
+
+    {/* <p>Name: {person.firstname} {person.lastname} Email: {person.email}</p>
     <input placeholder="First name" name="firstname" value={person.firstname} onChange={inputChanged} />
     <input placeholder="Last name" name="firstname" value={person.lastname} onChange={inputChanged} />
     <input placeholder="Email" name="email" value={person.email} onChange={inputChanged} />
-    <button onClick={showAlert}>Submit</button>
+    <button onClick={showAlert}>Submit</button> */}
+
+    <form onSubmit={formSubmitted}>
+      <input placeholder="First name" name="firstname" value={person.firstname} onChange={inputChanged} />
+      <input placeholder="Last name" name="lastname" value={person.lastname} onChange={inputChanged} />
+      <input placeholder="Email" name="email" value={person.email} onChange={inputChanged} />
+      <input type="submit" value="Submit" />
+    </form>
     </>
   )
 }
